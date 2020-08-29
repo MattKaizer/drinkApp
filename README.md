@@ -1,3 +1,24 @@
+# ReactJS APP practice - Drink recipes Browser 
+
+[link-netlify-preview]()
+
+### Simple React App
+
+## Task Description
+
+
+
+#### Enum Tech used
+
+* HTML5
+* CSS3
+* JS
+* ReacJS
+* Bootstrap 4
+* Axios
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
