@@ -6,7 +6,7 @@
 
 ## Task Description
 
-
+This is a simple app build on reactjs. Its just a practice for using useContext hooks instead of passing props all the time.
 
 #### Enum Tech used
 
