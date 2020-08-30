@@ -1,12 +1,36 @@
-import React, { useContext } from 'react';
-import { ContextCategory } from '../context/ContextCategory';
+import React, { useContext, useState } from 'react';
+import { CategoryContext } from '../context/CategoryContext';
+import { RecipiesContext } from '../context/RecipiesContext';
 
 const Form = () => {
+    //form state
+    const [searchQuery, setSearchQuery] = useState({
+        ingredient: '',
+        category: ''
+    }); 
 
+    //handler
+    const handlerChange = e => {
+        setSearchQuery({
+            ...searchQuery,
+            [e.target.name] : e.target.value
+        })
+    }
+
+    //in this case i use context instead of passing props to the component
+    const { categories } = useContext(CategoryContext);
+    const { setSearch, setConsulting } = useContext(RecipiesContext);
 
     return ( 
         <form 
             className="col-12"
+            onSubmit={
+                e => {
+                    e.preventDefault();
+                    setSearch(searchQuery);
+                    setConsulting(true);
+                }
+            }
         >
             <fieldset className="text-center">
                 <legend>
@@ -19,17 +43,27 @@ const Form = () => {
                         type="text" 
                         className="form-control" 
                         name="ingredient"
-                        placeholder="Search by ingredient"    
+                        placeholder="Search by ingredient"
+                        onChange={handlerChange}    
                     />
                 </div>
                 <div className="col-md-4">
-                    <select name="category" className="form-control">
+                    <select name="category" 
+                        className="form-control"
+                        onChange={handlerChange}
+                    >
                         <option value="">-- Select Category --</option>
+                        {categories.map(category => (
+                            <option 
+                                key={category.strCategory} 
+                                value={category.strCategory}
+                            >{category.strCategory}</option>
+                        ))}
                     </select>
                 </div>
                 <div className="col-md-4">
                     <input 
-                        type="text" 
+                        type="submit" 
                         className="btn btn-block btn-primary" 
                         value="Search Drinks"
                     />
