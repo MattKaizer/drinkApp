@@ -4,18 +4,25 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import { TextareaAutosize } from '@material-ui/core';
 
 
 
 //Style component for modal
 const useStyles = makeStyles((theme) => ({
+
     modal: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     },
     paper: {
-    width: 400,
+    width: '80vh',
+    maxWidth: '100vw',
+    maxHeight: '75%',
+    top: '50%',
+    left: '0',
+    overflowY: 'auto',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -91,7 +98,7 @@ const Recipe = ({recipies}) => {
                                 <h3 className="mt-4">Insructions</h3>
                                 <p id="transition-modal-description">
                                     {recipe.strInstructions}</p>
-                                <img src={recipe.strDrinkThumb} alt={recipe.strDrink} className="img-fluid my-4"/>
+                                <img src={recipe.strDrinkThumb} alt={recipe.strDrink} className="img-fluid"/>
                                 <h4>Ingredients:</h4>
                                 <ul>{showIngredients(recipe)}</ul>
                             </div>
