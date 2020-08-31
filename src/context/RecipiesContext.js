@@ -26,14 +26,14 @@ useEffect(() => {
         }
         getRecipies();
     }
-}, [search]);
+}, [search, ingredient, consulting, category]);
 
     return ( 
         <RecipiesContext.Provider
             value={{
                 recipies,
                 setSearch,
-                setConsulting
+                setConsulting,
             }}
         >
             {props.children}

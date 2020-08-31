@@ -16,7 +16,7 @@ const ModalProvider = (props) => {
             const recipeUrl = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idRecipe}`;
             const response = await Axios(recipeUrl);
             setRecipe(response.data.drinks[0])
-            // console.log(response.data.drinks)
+            console.log(response.data.drinks)
         }
         getRecipe();
     }, [idRecipe])
@@ -24,7 +24,9 @@ const ModalProvider = (props) => {
     return ( 
         <ModalContext.Provider
             value={{
-                setIdRecipe
+                recipe,
+                setIdRecipe,
+                setRecipe
             }}
         >
             {props.children}

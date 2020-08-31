@@ -6,9 +6,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+  //For now Material-UI Developers not updating his work with react, so i have to remove strict mode
+    <App />,
   document.getElementById('root')
 );
 
