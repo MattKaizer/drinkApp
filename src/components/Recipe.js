@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     },
     paper: {
-    width: '80vh',
+    width: '70vh',
     maxWidth: '80vw',
     maxHeight: '70%',
     top: '50%',
