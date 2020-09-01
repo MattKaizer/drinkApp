@@ -43,7 +43,7 @@ const Form = () => {
                         type="text" 
                         className="form-control" 
                         name="ingredient"
-                        placeholder="Search by ingredient"
+                        placeholder="Add an ingredient, like: tequila"
                         onChange={handlerChange}    
                     />
                 </div>
