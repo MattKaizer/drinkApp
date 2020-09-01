@@ -17,12 +17,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     },
     paper: {
-    width: '70vh',
-    maxWidth: '80vw',
-    maxHeight: '70%',
+    width: '70%',
+    height: '70%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    position: 'fixed',
     top: '50%',
-    left: '0',
+    left: '50%',
     overflowY: 'auto',
+    transform: 'translate(-50%, -50%)',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -99,7 +102,7 @@ const Recipe = ({recipies}) => {
                                 <p id="transition-modal-description">
                                     {recipe.strInstructions}</p>
                                 <img src={recipe.strDrinkThumb} alt={recipe.strDrink} className="img-fluid"/>
-                                <h4>Ingredients:</h4>
+                                <h4 className="mt-3">Ingredients:</h4>
                                 <ul>{showIngredients(recipe)}</ul>
                             </div>
                         </Fade>

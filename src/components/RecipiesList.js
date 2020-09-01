@@ -9,12 +9,13 @@ const RecipiesList = () => {
 
     return ( 
         <div className="row mt-5">
-            {recipies.map(recipe => (
+            {recipies != null ?
+            recipies.map(recipe => (
                 <Recipe
                     key={recipe.idDrink}
                     recipies={recipe}
                 />
-            ))}
+            )) : null}
         </div>
      );
 }
