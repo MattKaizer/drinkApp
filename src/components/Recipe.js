@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
     width: '80vh',
-    maxWidth: '100vw',
-    maxHeight: '75%',
+    maxWidth: '80vw',
+    maxHeight: '70%',
     top: '50%',
     left: '0',
     overflowY: 'auto',
